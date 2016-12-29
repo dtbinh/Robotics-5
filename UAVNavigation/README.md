@@ -1,9 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 NAVIGATION OF AN UAV IN AN UNKKNOWN ENVIRONMENT DEFINED IN
+
 EXTERNAL FILE (SPANISH BELOW)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 1. Included files:
 
   - Datasheets with sensor's specifications (pdf's docs).
@@ -25,7 +27,8 @@ EXTERNAL FILE (SPANISH BELOW)
   
   Afterwards, the file "GNC.slx" contains the whole model, clearly ordered.
   
- %-------------------------------------------------------------------%
+ (SPANISH VERSION)
+ 
 1. Archivos incluidos:
 
 	- Datasheets de información de los sensores (documentos
@@ -54,3 +57,5 @@ EXTERNAL FILE (SPANISH BELOW)
 	dinámico, ordenado de forma clara.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+P.S: There are still some mistakes relating the sensors and the feedback from the Kalman Filter Cascade. Please keep that in mind if you are to use these files.
