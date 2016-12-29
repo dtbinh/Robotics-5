@@ -1,0 +1,65 @@
+[System]
+Name='triangular'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='H'
+Range=[-6 6]
+NumMFs=2
+MF1='exceso':'trimf',[-11.9 -5.93 0.0476190476190492]
+MF2='falta':'trimf',[-0.0158730158730158 6 12]
+
+[Input2]
+Name='X3'
+Range=[-80 80]
+NumMFs=2
+MF1='excesoF1':'trimf',[-133 -80 -1.05820105820106]
+MF2='excesoF2':'trimf',[1.9047619047619 80 133]
+
+[Input3]
+Name='T3'
+Range=[-150 150]
+NumMFs=3
+MF1='tanque-caliente':'trimf',[-270 -150 -2.778]
+MF2='tanque-frio':'trimf',[4.365 150 270]
+MF3='tempertura-adecuada':'trimf',[-15.47 0 17.06]
+
+[Output1]
+Name='F1'
+Range=[0 10]
+NumMFs=2
+MF1='escaso':'trimf',[-3.33 -1.11e-16 5.03968253968254]
+MF2='abundante':'trimf',[4.96031746031746 9.89 13.2]
+
+[Output2]
+Name='F2'
+Range=[0 10]
+NumMFs=2
+MF1='escaso':'trimf',[-3.3 0.0265 4.98677248677249]
+MF2='abundante':'trimf',[5.09259259259259 10 13.3]
+
+[Output3]
+Name='Kv'
+Range=[0 1]
+NumMFs=3
+MF1='cerrado':'trimf',[-0.4 0 0.4]
+MF2='abierto':'trimf',[0.6 1 1.4]
+MF3='normal':'trimf',[0.488095238095238 0.5 0.515]
+
+[Rules]
+1 1 0, 1 1 0 (1) : 1
+2 1 0, 2 2 0 (1) : 1
+0 1 0, 1 2 0 (1) : 1
+0 2 0, 2 1 0 (1) : 1
+0 0 1, 0 0 1 (1) : 1
+0 0 2, 0 0 2 (1) : 1
+0 0 3, 0 0 3 (1) : 1

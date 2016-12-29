@@ -1,0 +1,74 @@
+[System]
+Name='mixto'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=3
+NumRules=8
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='H'
+Range=[-6 6]
+NumMFs=2
+MF1='lleno':'trapmf',[-15.9 -6.33 -5.65547128927411 1.99]
+MF2='vacio':'trapmf',[-2.02 5.64247020585049 7.2 16.8]
+
+[Input2]
+Name='X3'
+Range=[-80 80]
+NumMFs=3
+MF1='excesoF1':'gaussmf',[48.2171856284856 -80]
+MF2='equilibrado':'gaussmf',[1.47228047720566 -8.88e-16]
+MF3='excesoF2':'gaussmf',[48.069957580765 80]
+
+[Input3]
+Name='T3'
+Range=[-70 70]
+NumMFs=3
+MF1='caliente':'trapmf',[-133 -77 -33.3694474539545 -0.607]
+MF2='templado':'trapmf',[-20 -0.303 -0.15167930660887 20]
+MF3='frio':'trapmf',[-0.281 34.2795232936078 69.7 126]
+
+[Input4]
+Name='F3'
+Range=[-12 12]
+NumMFs=2
+MF1='mf1':'trimf',[-21.5 -11.9 4.92063492063492]
+MF2='mf3':'trimf',[4.98412888888889 16.8888888888889 26.4888888888889]
+
+[Output1]
+Name='F1'
+Range=[0 10]
+NumMFs=2
+MF1='escaso':'trapmf',[-4.5 -0.5 0.309 4.98916576381365]
+MF2='abudante':'trapmf',[4.9783315276273 9.7 10.5 14.5]
+
+[Output2]
+Name='F2'
+Range=[0 10]
+NumMFs=2
+MF1='escaso':'trapmf',[-4.5 -0.5 0.276 5.01083423618635]
+MF2='abundante':'trapmf',[5 9.7 11.1 15.1]
+
+[Output3]
+Name='Kv'
+Range=[0 1]
+NumMFs=3
+MF1='cerrado':'gbellmf',[0.392 0.976806942358703 0]
+MF2='medio':'gbellmf',[0.0411700975081257 0.776 0.5]
+MF3='abierto':'gbellmf',[0.384073672806067 0.905 1]
+
+[Rules]
+1 0 0 0, 1 1 0 (1) : 1
+2 0 0 0, 2 2 0 (1) : 1
+0 1 0 0, 1 2 0 (1) : 1
+0 3 0 0, 2 1 0 (1) : 1
+0 0 1 0, 0 0 1 (1) : 1
+0 0 2 0, 0 0 2 (1) : 1
+0 0 3 0, 0 0 3 (1) : 1
+0 0 0 2, 1 1 0 (1) : 1

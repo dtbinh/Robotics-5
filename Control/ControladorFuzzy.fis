@@ -1,0 +1,77 @@
+[System]
+Name='ControladorFuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=3
+NumRules=8
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='F3'
+Range=[-10 10]
+NumMFs=3
+MF1='F3bajo':'trimf',[-20 -10 0]
+MF2='F3medio':'trimf',[-10 0 10]
+MF3='F3alto':'trimf',[0 10 20]
+
+[Input2]
+Name='T3'
+Range=[-500 500]
+NumMFs=3
+MF1='T3bajo':'trapmf',[-950 -500 -20 -0]
+MF2='T3medio':'trimf',[-20 0 20]
+MF3='T3alto':'trapmf',[0 20 500 720]
+
+[Input3]
+Name='X3'
+Range=[-100 100]
+NumMFs=3
+MF1='X3bajo':'trapmf',[-190 -110 -10 0]
+MF2='X3medio':'trapmf',[-10 -5 5 10]
+MF3='X3alto':'trapmf',[0 10 110 190]
+
+[Input4]
+Name='H'
+Range=[-10 10]
+NumMFs=2
+MF1='Hmedio':'trapmf',[-28 -12 -2.51 -1.08465608465609]
+MF2='Halto':'trapmf',[-2.2 -1.45502645502646 14.6 30.6]
+
+[Output1]
+Name='F1'
+Range=[0 10]
+NumMFs=3
+MF1='F1Bajo':'trapmf',[-4.5 -0.5 0.41 1.25661375661376]
+MF2='F1Alto':'trapmf',[8.61111111111111 9.06 10 10]
+MF3='F1Medio':'trapmf',[0.5 1.07 8.53174603174603 9.5]
+
+[Output2]
+Name='F2'
+Range=[0 10]
+NumMFs=3
+MF1='F2Bajo':'trapmf',[0 0 0.622 1.28306878306878]
+MF2='F2Alto':'trapmf',[8.45238095238095 8.96 10 10]
+MF3='F2medio':'trapmf',[0.5 1.18 8.505291005291 9.5]
+
+[Output3]
+Name='KV'
+Range=[0 1]
+NumMFs=3
+MF1='KVBajo':'trapmf',[-0.45 -0.05 0.05 0.128306878306878]
+MF2='KVMedio':'trapmf',[0.05 0.131 0.882275132275132 0.95]
+MF3='KVAlto':'trapmf',[0.89021164021164 0.95 1.05 1.45]
+
+[Rules]
+0 1 0 0, 0 0 3 (1) : 1
+0 3 0 0, 0 0 1 (1) : 1
+0 2 0 0, 0 0 2 (1) : 1
+2 0 0 0, 2 2 0 (1) : 1
+0 0 1 0, 2 1 0 (1) : 1
+0 0 3 0, 1 2 0 (1) : 1
+0 0 0 2, 1 1 0 (1) : 1
+0 0 2 0, 3 3 0 (1) : 1

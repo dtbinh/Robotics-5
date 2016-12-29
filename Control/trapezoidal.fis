@@ -1,0 +1,74 @@
+[System]
+Name='trapezoidal'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='H'
+Range=[-6 6]
+NumMFs=2
+MF1='lleno':'trapmf',[-7.89 -5.95 -3.89 -0.0476190476190475]
+MF2='vacio':'trapmf',[0.0476190476190492 3.82 5.92 7.82]
+
+[Input2]
+Name='X3'
+Range=[-80 80]
+NumMFs=5
+MF1='excesoF1':'trapmf',[-173 -109 -73.4 -49.7354497354497]
+MF2='equilibrio':'trapmf',[-9.52628042328043 -8.84628042328043 7.15371957671957 9.10371957671957]
+MF3='excesoF2':'trapmf',[50.3283597883598 70.4283597883598 130.32835978836 194.28835978836]
+MF4='muchoF1':'trapmf',[-53.062962962963 -41.662962962963 -20.062962962963 -7.36296296296296]
+MF5='muchoF2':'trapmf',[7.87566137566137 19.2756613756614 39.5756613756614 54.3956613756614]
+
+[Input3]
+Name='T3'
+Range=[-80 80]
+NumMFs=2
+MF1='caliente':'trapmf',[-224 -96 -75.978835978836 1.48]
+MF2='frio':'trapmf',[-0.635 75.5555555555555 95.6 224]
+
+[Output1]
+Name='F1'
+Range=[0 10]
+NumMFs=5
+MF1='escaso':'trapmf',[-4.5 -0.5 0.5 2.97619047619048]
+MF2='medio':'trapmf',[2.9 4.47 5.47 7.02380952380952]
+MF3='abundante':'trapmf',[6.9973544973545 9.5 10.5 14.5]
+MF4='medio-bajo':'trapmf',[1.96645502645503 2.60645502645503 3.26719576719577 4.03645502645503]
+MF5='medio-alto':'trapmf',[6.04994708994709 6.77994708994709 7.34994708994709 8.10994708994709]
+
+[Output2]
+Name='F2'
+Range=[0 10]
+NumMFs=5
+MF1='escaso':'trapmf',[-4.39 -0.394 0.78 3.0026455026455]
+MF2='medio':'trapmf',[3.08 4.5 5.5 7.05026455026455]
+MF3='abundante':'trapmf',[7.05026455026455 9.5 10.5 14.5]
+MF4='medio-bajo':'trapmf',[1.97 2.61 3.27 4.04]
+MF5='medio-alto':'trapmf',[6.05 6.78 7.35 8.11]
+
+[Output3]
+Name='Kv'
+Range=[0 1]
+NumMFs=2
+MF1='cerrado':'trapmf',[-0.9 -0.1 0.00132275132275128 0.615]
+MF2='abierta':'trapmf',[0.411 1.00132275132275 1.1 1.9]
+
+[Rules]
+1 0 0, 1 1 0 (1) : 1
+2 0 0, 3 3 0 (1) : 1
+0 1 0, 3 1 0 (1) : 1
+0 2 0, 2 2 0 (1) : 1
+0 3 0, 3 1 0 (1) : 1
+0 4 0, 1 5 0 (1) : 1
+0 5 0, 5 4 0 (1) : 1
+0 0 1, 0 0 1 (1) : 1
+0 0 2, 0 0 2 (1) : 1
