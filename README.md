@@ -5,7 +5,7 @@ Projects which are devoted to path planning in robots, its control and other top
 
 ## Current projects
 * Control -> Automation of a water plant by fuzzy logic controllers. Implemented in *Matlab*.
-* Cinematics -> You will need to install [Peter Corke's toolbox][http://petercorke.com/wordpress/toolboxes/robotics-toolbox] to run them. Contains a full analysis for a general robot and a 2D Cyclic Coordinate Descent algorithm.
+* Cinematics -> You will need to install [Peter Corke's toolbox](http://petercorke.com/wordpress/toolboxes/robotics-toolbox) to run them. Contains a full analysis for a general robot and a 2D Cyclic Coordinate Descent algorithm.
 * Matlab-GUI -> Case samples of *Matlab*'s GUI without the built-in tool GUIDE.
 * MobileRobots -> Simple case of use of a Kalman Filter for Autonavigation of a simple robot.
 * UAVNavigation -> Full example of an UAV in *Matlab*. Error in the connections of the Kalman output. Needs revision.
